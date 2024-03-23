@@ -1,13 +1,14 @@
 #include <stdio.h>
 #include <string.h>
 
-struct car{
-    int bef1,bef2,bef3,bef4,bef5,bef6,bef7,bef8,bef9,bef10,bef11,bef12,bef13,bef14,bef15,bef16,bef17,bef18,bef19,bef20,bef21,bef22,bef23;
-    int bef24,bef25,bef26,bef27,bef28,bef29,bef30,bef31,bef32,bef33,bef34,bef35,bef36,bef37,bef38,bef39,bef40,bef41,bef42,bef43,bef44,bef45;
-
-};
-
 int main(){
+
+    FILE *fptr;
+
+    fptr = fopen("mtv.txt", "r");
+    char myString[100];
+    fgets(myString, 100, fptr);
+    printf("%s", myString);  
     
     char type;
     float age;
@@ -107,6 +108,7 @@ int main(){
     }
     
 
+    fclose(fptr);
     return 0;
 }
 
