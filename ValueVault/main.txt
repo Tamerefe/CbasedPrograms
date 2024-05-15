@@ -1,5 +1,0 @@
-Yatırım uygulaması 
--1 düşerse al
-+1 çıkarsa sat ama detaylı versiyon kar ettiren cinsten
-
-mesela tesla hissesi şu an 201 dolar bunu %10 %20 azaltacak veya arttıracak bazı durumlarda ani düşüş ve azalışlar olacak bunların ihtimalini düşürmeye çalışacağım

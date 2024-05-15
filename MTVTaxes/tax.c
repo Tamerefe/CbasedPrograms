@@ -1,14 +1,10 @@
 #include <stdio.h>
 #include <string.h>
 
+void newcars(char type,float age,int engine,int price);
+void oldcars(char type,float age,int engine);
+
 int main(){
-
-    FILE *fptr;
-
-    fptr = fopen("mtv.txt", "r");
-    char myString[100];
-    fgets(myString, 100, fptr);
-    printf("%s", myString);  
     
     char type;
     float age;
@@ -17,7 +13,7 @@ int main(){
     printf("Welcome to The Mtv Calculator\n\n");
 
     printf("Please Select Your Car Type:");
-    printf("\nA.) Car \nB.) Motorcycle \nC.) Minibus \nD.) Bus \nE.) Panelvan, Motor Caravan \nF.) Truck, Pickup Truck, Tow Truck \nE.) Fully Electric Cars\n");
+    printf("\nA.) Car \nB.) Motorcycle \nE.) Fully Electric Cars\n");
     scanf("%c",&type);
 
     printf("Please Enter Vehicle Age:");
@@ -38,7 +34,9 @@ int main(){
     printf("\n1.) Before 2018 \n2.) After 2018\n");
     scanf("%d",&regis);
 
-    if (regis == 2){
+    if(regis == 1){
+        oldcars(type,age,engine);
+    }else if (regis == 2){
         printf("Vehicle value excluding Kdv:");
         if (engine <= 1300){
             printf("\n180.600Tl- / 180.600-316.400Tl / 316.400Tl+\n");
@@ -68,48 +66,127 @@ int main(){
             printf("\n2.151.400Tl- / 2.151.400+\n");
             scanf("%d",&price);
         }
+        newcars(type,age,engine,price);
     }
+    
+    return 0;
+}
+
+// void newcars(char type,float age,int engine,int price){
+
+// }
+
+void oldcars(char type,float age,int engine){
 
     switch (type){
         case 'a':
         case 'A':
         if (age <= 3){
             if (engine <= 1300){
-                /* code */
+                printf("\nYour MTV: 3.359 TL");
             } else if (engine > 1300 || engine <= 1600){
-                /* code */
+                printf("\nYour MTV: 5.851 TL");
             } else if (engine > 1600 || engine <= 1800){
-                
+                printf("\nYour MTV: 10.342 TL");
             } else if (engine > 1800 || engine <= 2000){
-                /* code */
+                printf("\nYour MTV: 16.296 TL");
             } else if (engine > 2000 || engine <= 2500){
-                /* code */
+                printf("\nYour MTV: 24.439 TL");
             } else if (engine > 2500 || engine <= 3000){
-                /* code */
+                printf("\nYour MTV: 34.081 TL");
             } else if (engine > 3000 || engine <= 3500){
-                /* code */
+                printf("\nYour MTV: 51.903 TL");
             } else if (engine > 3500 || engine <= 4000){
-                /* code */
+                printf("\nYour MTV: 81.611 TL");
             } else if (engine > 4000){
-                /* code */
+                printf("\nYour MTV: 133.572 TL");
             }
         } else if (age > 3 || age <= 6){
-            /* code */
+            if (engine <= 1300){
+                printf("\nYour MTV: 2.343 TL");
+            } else if (engine > 1300 || engine <= 1600){
+                printf("\nYour MTV: 4.387 TL");
+            } else if (engine > 1600 || engine <= 1800){
+                printf("\nYour MTV: 8.078 TL");
+            } else if (engine > 1800 || engine <= 2000){
+                printf("\nYour MTV: 12.546 TL");
+            } else if (engine > 2000 || engine <= 2500){
+                printf("\nYour MTV: 17.741 TL");
+            } else if (engine > 2500 || engine <= 3000){
+                printf("\nYour MTV: 29.646 TL");
+            } else if (engine > 3000 || engine <= 3500){
+                printf("\nYour MTV: 46.702 TL");
+            } else if (engine > 3500 || engine <= 4000){
+                printf("\nYour MTV: 70.470 TL");
+            } else if (engine > 4000){
+                printf("\nYour MTV: 100.164 TL");
+            }
         } else if (age > 6 || age <= 11){
-            
+            if (engine <= 1300){
+                printf("\nYour MTV: 1.308 TL");
+            } else if (engine > 1300 || engine <= 1600){
+                printf("\nYour MTV: 2.544 TL");
+            } else if (engine > 1600 || engine <= 1800){
+                printf("\nYour MTV: 4.758 TL");
+            } else if (engine > 1800 || engine <= 2000){
+                printf("\nYour MTV: 7.374 TL");
+            } else if (engine > 2000 || engine <= 2500){
+                printf("\nYour MTV: 11.085 TL");
+            } else if (engine > 2500 || engine <= 3000){
+                printf("\nYour MTV: 18.519 TL");
+            } else if (engine > 3000 || engine <= 3500){
+                printf("\nYour MTV: 28.129 TL");
+            } else if (engine > 3500 || engine <= 4000){
+                printf("\nYour MTV: 41.500 TL");
+            } else if (engine > 4000){
+                printf("\nYour MTV: 59.319 TL");
+            }
         } else if (age > 11 || age <= 15){
-            /* code */
+            if (engine <= 1300){
+                printf("\nYour MTV: 987 TL");
+            } else if (engine > 1300 || engine <= 1600){
+                printf("\nYour MTV: 1.798 TL");
+            } else if (engine > 1600 || engine <= 1800){
+                printf("\nYour MTV: 2.896 TL");
+            } else if (engine > 1800 || engine <= 2000){
+                printf("\nYour MTV: 4.387 TL");
+            } else if (engine > 2000 || engine <= 2500){
+                printf("\nYour MTV: 6.620 TL");
+            } else if (engine > 2500 || engine <= 3000){
+                printf("\nYour MTV: 9.956 TL");
+            } else if (engine > 3000 || engine <= 3500){
+                printf("\nYour MTV: 14.037 TL");
+            } else if (engine > 3500 || engine <= 4000){
+                printf("\nYour MTV: 18.519 TL");
+            } else if (engine > 4000){
+                printf("\nYour MTV: 26.654 TL");
+            }
         } else if (age > 15){
-            /* code */
+            if (engine <= 1300){
+                printf("\nYour MTV: 347 TL");
+            } else if (engine > 1300 || engine <= 1600){
+                printf("\nYour MTV: 690 TL");
+            } else if (engine > 1600 || engine <= 1800){
+                printf("\nYour MTV: 1.120 TL");
+            } else if (engine > 1800 || engine <= 2000){
+                printf("\nYour MTV: 1.728 TL");
+            } else if (engine > 2000 || engine <= 2500){
+                printf("\nYour MTV: 2.617 TL");
+            } else if (engine > 2500 || engine <= 3000){
+                printf("\nYour MTV: 3.654 TL");
+            } else if (engine > 3000 || engine <= 3500){
+                printf("\nYour MTV: 5.148 TL");
+            } else if (engine > 3500 || engine <= 4000){
+                printf("\nYour MTV: 7.374 TL");
+            } else if (engine > 4000){
+                printf("\nYour MTV: 10.342 TL");
+            }
         }
         break;
     default:
         break;
     }
-    
 
-    fclose(fptr);
-    return 0;
 }
 
 // https://hepiyi.com.tr/blog/mtv-nedir-mtv-hesaplama-nasil-yapilir
